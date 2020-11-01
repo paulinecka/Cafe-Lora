@@ -1,6 +1,6 @@
 import './index.html';
 import './style.css';
-import { Layer } from './Layer/index.js';
+import { Drink } from './Drink/index.js';
 
 console.log('funguju!');
 
@@ -20,44 +20,31 @@ for (let i = 0; i < navLinky.length; i++) {
   });
 }
 
-const orderBtn = document.querySelectorAll('.order-btn');
-const drinkCup = document.querySelector('.drink__cup');
+const drinks = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+};
 
-for (let i = 0; i < orderBtn.length; i++) {
-  const objednavka = orderBtn[i];
-  objednavka.addEventListener('click', () => {
-    drinkCup.classList.toggle('drink__cup--selected');
-    //objednavka.innerHTML = 'Zrušit';
-    if (drinkCup.classList.contains('drink__cup--selected')) {
-      objednavka.innerHTML = 'Zrušit';
-    } else {
-      objednavka.innerHTML = 'Objednat';
-    }
-  });
-}
+const drinksList = document.querySelector('.drinks-list');
+drinksList.appendChild(Drink(drinks));
 
-const layerApp = document.querySelector('#app');
-
-const layers = [
-  {
-    color: '#feeeca',
-    label: 'mléčná pěna',
-  },
-  {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
+/*
 
 for (let i = 0; i < layers.length; i++) {
   layerApp.innerHTML += Layer(layers[i]);
 }
 
-/*
                     <div class="layer__color"
                     style="background-color: #feeeca"
                   ></div>
@@ -83,4 +70,37 @@ layerApp.innerHTML = Layer({ color: '#feeeca', label: 'mléčná pěna' });
 layerApp.innerHTML += Layer({ color: '#fed7b0', label: 'teplé mléko' });
 
 layerApp.innerHTML += Layer({ color: '#613916', label: 'espresso' });
+
+<div class="drink">
+            <div class="drink__product">
+              <div class="drink__cup">
+                <img src="/assets/cups/cappuccino.png" />
+              </div>
+              <div class="drink__info">
+                <h3>Cappuccino</h3>
+                <div class="app"></div>
+              </div>
+            </div>
+
+
+//const orderBtn = document.querySelectorAll('.order-btn');
+//const drinkCup = document.querySelector('.drink__cup');
+
+//for (let i = 0; i < orderBtn.length; i++) {}
+
+
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
  */
