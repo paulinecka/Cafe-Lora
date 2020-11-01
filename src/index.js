@@ -37,11 +37,25 @@ for (let i = 0; i < orderBtn.length; i++) {
 }
 
 const layerApp = document.querySelector('#app');
-layerApp.innerHTML = Layer({ color: '#feeeca', label: 'mléčná pěna' });
 
-layerApp.innerHTML += Layer({ color: '#fed7b0', label: 'teplé mléko' });
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
 
-layerApp.innerHTML += Layer({ color: '#613916', label: 'espresso' });
+for (let i = 0; i < layers.length; i++) {
+  layerApp.innerHTML += Layer(layers[i]);
+}
 
 /*
                     <div class="layer__color"
@@ -64,5 +78,9 @@ layerApp.innerHTML += Layer({ color: '#613916', label: 'espresso' });
                   <div class="layer__label">espresso</div>
                 </div>
                   
-                  
-                  */
+layerApp.innerHTML = Layer({ color: '#feeeca', label: 'mléčná pěna' });
+
+layerApp.innerHTML += Layer({ color: '#fed7b0', label: 'teplé mléko' });
+
+layerApp.innerHTML += Layer({ color: '#613916', label: 'espresso' });
+ */
