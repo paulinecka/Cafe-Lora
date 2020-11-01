@@ -20,47 +20,16 @@ for (let i = 0; i < navLinky.length; i++) {
   });
 }
 
-const drinks = [
-  {
-    id: 'cappuccino',
-    name: 'Cappuccino',
-    ordered: false,
-    layers: [
-      {
-        color: '#feeeca',
-        label: 'mléčná pěna',
-      },
-      {
-        color: '#fed7b0',
-        label: 'teplé mléko',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-  },
-  {
-    id: 'romano',
-    name: 'Romano',
-    ordered: false,
-    layers: [
-      {
-        color: '#fbdf5b',
-        label: 'citrón',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-  },
-];
-
-drinks.forEach((drink) => {
-  const drinksList = document.querySelector('.drinks-list');
-  drinksList.appendChild(Drink(drink));
-});
+fetch('http://cafelora.kodim.cz/api/drinks')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    data.forEach((drink) => {
+      const drinksList = document.querySelector('.drinks-list');
+      drinksList.appendChild(Drink(drink));
+    });
+  });
 
 /*
 
