@@ -242,6 +242,14 @@ nav a:hover {
   background-attachment: fixed;
 }
 
+.popisek p {
+  font-family: 'Great Vibes', fantasy;
+  font-size: 30px;
+  transform: translateY(200px);
+  margin-left: 130px;
+  color: #ea946f;
+}
+
 .contacts {
   margin-bottom: 4rem;
 
