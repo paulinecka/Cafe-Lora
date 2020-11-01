@@ -1,5 +1,6 @@
 import './index.html';
 import './style.css';
+import { Layer } from './Layer/index.js';
 
 console.log('funguju!');
 
@@ -34,3 +35,34 @@ for (let i = 0; i < orderBtn.length; i++) {
     }
   });
 }
+
+const layerApp = document.querySelector('#app');
+layerApp.innerHTML = Layer({ color: '#feeeca', label: 'mléčná pěna' });
+
+layerApp.innerHTML += Layer({ color: '#fed7b0', label: 'teplé mléko' });
+
+layerApp.innerHTML += Layer({ color: '#613916', label: 'espresso' });
+
+/*
+                    <div class="layer__color"
+                    style="background-color: #feeeca"
+                  ></div>
+                  <div class="layer__label">mléčná pěna</div>
+<div class="layer">
+                  <div
+                    class="layer__color"
+                    style="background-color: #fed7b0"
+                  ></div>
+                  <div class="layer__label">teplé mléko</div>
+                </div>
+
+                <div class="layer">
+                  <div
+                    class="layer__color"
+                    style="background-color: #613916"
+                  ></div>
+                  <div class="layer__label">espresso</div>
+                </div>
+                  
+                  
+                  */
